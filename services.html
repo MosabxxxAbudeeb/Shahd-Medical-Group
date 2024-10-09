@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>services</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+     <!-- استيراد Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+     <!-- استيراد ملف CSS الخاص -->
+     <link rel="stylesheet" href="style.css">
+
+     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+
+<style>
+
+    
+ /* تحسين مظهر الهيدر */
+
+   
+ .navbar {
+    padding: 15px 0;
+    background-color: #8b7aaf; /* لون أزرق داكن وجميل */
+}
+
+.navbar-brand img {
+    width: 200px; /* حجم الشعار */
+    height: 60px;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1); /* تكبير الشعار عند التمرير */
+}
+
+/* تنسيق الروابط لتظهر أفقية مع مسافات ثابتة */
+.navbar-nav {
+    display: flex;
+    gap: 20px; /* التباعد بين الروابط */
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #0056b3; /* تغيير الخلفية عند التمرير */
+    color: #fff; /* ثبات اللون الأبيض للنص */
+}
+
+.navbar-toggler {
+    border-color: #fff; /* لون زر القائمة على الموبايل */
+    
+}
+
+.container {
+    max-width: 1300px; /* التحكم في عرض المحتوى داخل الهيدر */
+    
+}
+
+/* تحسين عرض الروابط في شاشات أصغر */
+@media (max-width: 992px) {
+    .navbar-nav {
+        flex-direction: column; /* الروابط تظهر عمودية على الشاشات الصغيرة */
+        align-items: flex-start;
+        gap: 10px; /* تقليل التباعد بين الروابط في الشاشات الصغيرة */
+    }
+}
+
+/* نهاية كود الهيدر  */
+
+
+
+/* كود التدرج البحث  */
+
+
+.health-conditions-section {
+    background: linear-gradient(to right, #ff7f50, #1e90ff); /* تدرج الألوان */
+    color: white; /* لون النص */
+    padding: 40px; /* مسافة داخلية */
+    width: 100vw; /* عرض كامل للشاشة */
+    position: relative; /* للتأكد من تحديد موضع العناصر بشكل صحيح */
+    left: 0; /* لا يوجد انزلاق */
+    margin: 0; /* إزالة المسافات الخارجية */
+}
+
+
+h1 {
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 30px;
+}
+
+.search-container {
+    margin-right: 20px; /* المسافة من حافة اليمين */
+}
+
+.search-input {
+    width: 70%; /* عرض صندوق البحث */
+    margin-right: 0px; /* المسافة بين صندوق البحث وزر البحث */
+    margin-bottom: 30px;
+}
+
+.search-btn {
+    padding: 10px 20px; /* حجم الزر */
+    
+}
+
+
+/* نهاية كود تدرج  */
+
+
+                                                 /* كود القوالب  */
+
+                                                 /* تنسيق القوالب */
+/* تنسيق الحاوية الخاصة بالقوالب */
+#cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem; /* استخدام rem للتحكم في المسافات */
+    justify-content: center;
+    margin: 0 auto;
+    padding: 1.25rem;
+    max-width: 75rem; /* العرض الأقصى 1200px باستخدام rem */
+}
+
+/* تنسيق القوالب نفسها */
+.card {
+    flex: 1 1 calc(33.333% - 1.25rem); /* مرونة العرض مع فجوات */
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease; /* تأثير الانتقال */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* حركة خفيفة عند التمرير */
+}
+
+/* تنسيق النص والصور */
+.card-text {
+    word-wrap: break-word;
+    word-break: break-word;
+    padding: 0.5rem 0;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+}
+
+/* التفاعل مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - 1.25rem); /* القوالب تصبح 50% */
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        flex: 1 1 100%; /* القوالب تشغل 100% */
+    }
+}
+
+
+
+
+
+                                                    /* نهاية القوالب  */
+
+                                                        /* بداية الفوتر */
+.footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 30px 0;
+}
+
+.footer h5 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.footer ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    color: #dddddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: #ffffff;
+}
+
+.footer .logo {
+    width: 50px;
+    height: auto;
+}
+
+.footer .hospital-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.footer .social-icons a {
+    color: #ffffff;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.footer .social-icons a:hover {
+    color: #1e90ff;
+}
+
+.footer .text-muted {
+    color: #dddddd !important;
+}
+
+/* الحقوق */
+.footer .text-center p {
+    color: #dddddd;
+    margin: 0;
+    font-size: 14px;
+}
+ /* نهاية الفوتر */
+
+
+</style>
+
+</head>
+<body  data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
+    
+ <!-- بداية الهيدر  -->
+   
+ <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            
+           
+            <!-- زر القائمة للموبايل -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- الروابط على اليمين -->
+            <div class="collapse navbar-collapse justify-content-start" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/master_page.html">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">عن المجمع</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/services.html">الخدمات الطبية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Medical services.html">الأطباء</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">حجز موعد</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">اتصل بنا</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">الأسئلة الشائعة</a>
+                    </li>
+                </ul>
+            </div>
+             <!-- الشعار على اليسار -->
+             <a class="navbar-brand" href="#">
+                <img src="/Opera Sn1111111_logo.com.png" alt="شعار المستشفى" width="200" height="60">
+            </a>
+
+        </div>
+    </nav>
+</header>
+
+<!-- نهاية الهيدر  -->
+
+
+
+<!-- كود تدرج الون البحث -->
+<section class="health-conditions-section">
+    <div class="container">
+        <h1 class="display-4 text-right">الأمراض والحالات الصحية</h1>
+        <p class="lead text-right">استكشف المعلومات حول الأمراض الشائعة والحالات الصحية. ابحث عن تفاصيل دقيقة وموثوقة لمساعدتك.</p>
+        <div class="search-container text-right">
+            <form class="form-inline justify-content-end">
+                <input type="text" class="form-control search-input" placeholder="أدخل اسم المرض أو الحالة الصحية" aria-label="Search">
+                <button class="btn btn-primary search-btn" type="submit">بحث</button>
+            </form>
+        </div>
+    
+    
+    </div>
+</section>
+
+
+<!-- كود القوالب  -->
+
+
+        <!-- قسم القوالب -->
+        <div id="cards-container">
+            <!-- أول قالب به صورة -->
+            <div class="card" id="carder">
+                <div class="card-body">
+                    <h5 class="card-title"> أداة التحقق من الأعراض</h5>
+                    <p class="card-text">  اكتشف السبب المحتمَل للأعراض التي تشعر بها ومتى يجب عليك طلب الرعاية الصحية.</p>
+                    <a href="#" class="btn btn-primary">رابط التفاصيل</a>
+                </div>
+                <img src="https://via.placeholder.com/150" alt="صورة مرض">
+
+            </div>
+
+            <!-- ثلاثة قوالب بدون صور -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">عنوان ثاني</h5>
+                    <p class="card-text">نص حول المرض أو الحالة الصحية هنا.</p>
+                    <a href="#" class="btn btn-primary">رابط التفاصيل</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">عنوان ثالث</h5>
+                    <p class="card-text">نص حول المرض أو الحالة الصحية هنا.</p>
+                    <a href="#" class="btn btn-primary">رابط التفاصيل</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">عنوان رابع</h5>
+                    <p class="card-text">نص حول المرض أو الحالة الصحية هنا.</p>
+                    <a href="#" class="btn btn-primary">رابط التفاصيل</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- نتائج البحث (مخفية في البداية) -->
+        <div class="results-container" id="results-container">
+            <h2>نتائج البحث:</h2>
+            <p>هنا ستظهر نتائج البحث بناءً على الإدخال.</p>
+        </div>
+
+        <!-- رسالة في حالة عدم وجود نتائج -->
+        <div class="no-results" id="no-results">
+            <p>لا توجد نتائج مطابقة لبحثك.</p>
+        </div>
+  
+
+<!-- نهاية كود القوالب  -->
+
+
+<!-- بداية الفوتر  -->
+
+<footer class="footer mt-5 pt-5">
+    <div class="container">
+        <div class="row">
+            <!-- قسم الشعار واسم المستشفى -->
+            <div class="col-md-4 mb-4">
+                <div class="d-flex align-items-center">
+                    <img src="/‏‏لقطة الشاشة (138).png" alt="مستشفى" class="logo img-fluid me-3" style="width: 50px; border-radius: 10px; margin-left: 20px;">
+                    <h3 class="hospital-name"> مجموعة شهد الطبية </h3>
+                </div>
+                <p class="text-muted mt-3">نحن هنا لضمان تقديم أفضل رعاية صحية ممكنة.</p>
+            </div>
+
+            <!-- روابط سريعة -->
+            <div class="col-md-4 mb-4">
+                <h5>روابط مهمة</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">من نحن</a></li>
+                    <li><a href="#">خدماتنا</a></li>
+                    <li><a href="#">الأطباء</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                </ul>
+            </div>
+
+            <!-- معلومات الاتصال -->
+            <div class="col-md-4 mb-4">
+                <h5>تواصل معنا</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-map-marker-alt"></i> العنوان: 123 شارع المستشفى، المدينة</li>
+                    <li><i class="fas fa-phone-alt"></i> الهاتف: 0123456789</li>
+                    <li><i class="fas fa-envelope"></i> البريد الإلكتروني: info@hospital.com</li>
+                </ul>
+                <!-- روابط التواصل الاجتماعي -->
+                <div class="social-icons mt-3">
+                    <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- الحقوق -->
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <p class="text-muted">&copy; 2024 مستشفى الشفاء. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- نهاية الفوتر  -->
+
+
+
+    
+    
+    
+
+<!-- نهاية كود تدرج  -->
+
+
+
+
+
+
+    
+  <!-- استيراد Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+
+
+
+
+
+
+
+  <!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript -->
+<script>
+    function searchFunction(event) {
+        event.preventDefault(); // منع تحديث الصفحة عند الضغط على زر البحث
+
+        const input = document.getElementById("searchInput").value.toLowerCase();
+        const cards = document.getElementById("cards-container").children;
+        let hasResults = false;
+
+        for (let i = 0; i < cards.length; i++) {
+            const cardTitle = cards[i].querySelector('.card-title').innerText.toLowerCase();
+            if (cardTitle.includes(input)) {
+                cards[i].style.display = "block"; // إظهار القالب إذا كان يحتوي على الكلمة
+                hasResults = true;
+            } else {
+                cards[i].style.display = "none"; // إخفاء القالب إذا لم يتطابق
+            }
+        }
+
+        const resultsContainer = document.getElementById("results-container");
+        const noResultsMessage = document.getElementById("no-results");
+
+        if (input === "") {
+            // إظهار جميع القوالب إذا كان مربع البحث فارغًا
+            for (let i = 0; i < cards.length; i++) {
+                cards[i].style.display = "block";
+            }
+            resultsContainer.style.display = "none";
+            noResultsMessage.style.display = "none";
+        } else if (hasResults) {
+            // إذا كان هناك نتائج، إخفاء رسالة عدم وجود نتائج
+            resultsContainer.style.display = "block";
+            noResultsMessage.style.display = "none";
+        } else {
+            // إذا لم تكن هناك نتائج، إظهار رسالة "لا توجد نتائج"
+            noResultsMessage.style.display = "block";
+            resultsContainer.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> مجمع شهد الطبي </title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+     <!-- استيراد Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+     <!-- استيراد ملف CSS الخاص -->
+     <link rel="stylesheet" href="style.css">
+
+     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+
+  
+    <style>
+       /* تحسين مظهر الهيدر */
+
+   
+.navbar {
+    padding: 15px 0;
+    background-color: #8b7aaf; /* لون أزرق داكن وجميل */
+}
+
+.navbar-brand img {
+    width: 200px; /* حجم الشعار */
+    height: 60px;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1); /* تكبير الشعار عند التمرير */
+}
+
+/* تنسيق الروابط لتظهر أفقية مع مسافات ثابتة */
+.navbar-nav {
+    display: flex;
+    gap: 20px; /* التباعد بين الروابط */
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #0056b3; /* تغيير الخلفية عند التمرير */
+    color: #fff; /* ثبات اللون الأبيض للنص */
+}
+
+.navbar-toggler {
+    border-color: #fff; /* لون زر القائمة على الموبايل */
+    
+}
+
+.container {
+    max-width: 1300px; /* التحكم في عرض المحتوى داخل الهيدر */
+    
+}
+
+/* تحسين عرض الروابط في شاشات أصغر */
+@media (max-width: 992px) {
+    .navbar-nav {
+        flex-direction: column; /* الروابط تظهر عمودية على الشاشات الصغيرة */
+        align-items: flex-start;
+        gap: 10px; /* تقليل التباعد بين الروابط في الشاشات الصغيرة */
+    }
+}
+
+/* نهاية كود الهيدر  */
+
+/* كود الشريط الاخباري  */
+  /* تصميم الشريط الإخباري */
+  .news-bar {
+    background-color: red; 
+      color: #fff;
+      padding: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .news-bar h5 {
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+    }
+    
+    .news-bar .news-ticker {
+      display: flex;
+      position: absolute;
+      white-space: nowrap;
+      animation: ticker 15s linear infinite;
+    }
+    
+    .news-bar .news-ticker div {
+      margin-right: 50px;
+    }
+    
+    @keyframes ticker {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    /* استجابة للجوال */
+    @media (max-width: 768px) {
+      .news-bar h5 {
+        font-size: 16px;
+      }
+    }
+
+
+/* نهاية الشريط الاخباري  */
+
+
+/* كود الفيديو  */
+/* جعل الفيديو يأخذ العرض الكامل للصفحة */
+video {
+    position: absolute;
+    top: 140px;
+    left: 0;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1; /* وضع الفيديو في الخلفية */
+}
+
+
+/* تراكب المحتوى النصي فوق الفيديو */
+.content-overlay {
+    position: absolute;
+    margin-top: 200px;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 500px; /* ضبط العرض ليتناسب مع النص */
+    
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 10px 30px;
+    background-color: #ca3e8f;
+    border-radius: 50px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ca3e8f;
+}
+/* نهاية كود الفيديو  */
+
+
+
+/* بداية كود شرح الاول  */
+/* تحسين مظهر الصورة */
+.image-container img {
+    max-height: 600px; /* التحكم في ارتفاع الصورة الطويلة */
+    object-fit: cover; /* جعل الصورة تتناسب مع الإطار */
+    border-radius: 15px; /* إضافة زوايا دائرية للصورة */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل للصورة */
+}
+.text-content{
+    width: 700px;
+    text-align: right; /* محاذاة النص إلى اليمين */
+    color: #333; /* لون النص الافتراضي */
+    line-height: 1.6; /* تحسين المسافة بين الأسطر */
+    margin-left: 30px; /* إضافة مسافة إلى اليسار لتوفير مساحة بين النص والصورة */
+}
+/* تحسين مظهر النص */
+.text-content h1 {
+    font-weight: 700;
+    color: #8b7aaf; /* لون العنوان */
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.text-content .btn {
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 50px; /* زر دائري مميز */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.text-content .btn:hover {
+    background-color: #8b7aaf;
+    box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3); /* تأثير جميل على الزر عند التمرير */
+}
+
+/* التحكم في الهيكل العام */
+.container {
+    max-width: 1200px; /* التحكم في عرض المحتوى */
+}
+
+/* تحسين عرض المحتوى على الشاشات الصغيرة */
+@media (max-width: 992px) {
+    .d-flex {
+        flex-direction: column-reverse; /* النص يأتي قبل الصورة في الشاشات الصغيرة */
+        text-align: center;
+    }
+
+    .image-container img {
+        max-width: 100%;
+        max-height: 400px;
+    }
+
+    .text-content {
+        margin-bottom: 20px;
+    }
+}
+
+.btn{
+    font-size: 18px; /* حجم الخط */
+    padding: 15px 40px; /* مسافات داخل الزر */
+    background-color: #8b7aaf; /* لون خلفية الزر */
+    color: white; /* لون النص */
+    border: none; /* إزالة الإطار */
+    border-radius: 50px; /* زوايا دائرية كبيرة */
+    cursor: pointer; /* تغيير المؤشر إلى يد عند التمرير */
+    text-transform: uppercase; /* تحويل النص إلى أحرف كبيرة */
+    letter-spacing: 1px; /* توسيع المسافة بين الأحرف */
+    font-weight: bold; /* جعل النص سميك */
+    transition: all 0.4s ease; /* تأثير الانتقال السلس */
+    position: relative; /* لجعل العناصر الداخلية مطلقة */
+    overflow: hidden; /* إخفاء الفائض لجعل التأثيرات نظيفة */
+
+}
+/* نهاية كود شرح الاول  */
+
+
+/* با الخط العريض  */
+/* تنسيق الخط الملون */
+.colored-line {
+    width: 80%; /* عرض الخط */
+    height: 4px; /* سماكة الخط */
+    background: linear-gradient(to right, #ff7f50, #1e90ff); /* لون متدرج للخط */
+    margin: 50px auto; /* توسيط الخط في الصفحة */
+    border-radius: 10px; /* حواف مستديرة للخط */
+}
+
+/* با الخط العريض  */
+
+
+ 
+ /* فروعنا */
+/* تنسيق العنوان الرئيسي */
+/* تعديل الصور لتكون ممتلئة داخل القوالب */
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+/* خلفية النصوص فوق الصور */
+.card-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5); /* خلفية داكنة نصف شفافة */
+    color: #fff; /* لون النص أبيض */
+    padding: 1rem;
+    text-align: center;
+    z-index: 2;
+}
+
+/* تعديل العنوان داخل الكرت */
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff; /* لون العنوان أبيض */
+}
+
+/* تعديل النصوص */
+.card-text {
+    font-size: 1rem;
+    color: #ddd; /* لون النص أبيض فاتح */
+}
+
+/* الهوامش العامة */
+.container {
+    max-width: 1200px;
+}
+
+.mb-4 {
+    margin-bottom: 2rem;
+}
+
+.mb-5 {
+    margin-bottom: 3rem;
+}
+
+/* تنسيق على الأجهزة الصغيرة */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    .card-img-top {
+        height: 150px;
+    }
+    .card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+
+ /* نهاية فروعنا */
+ 
+
+ /* بداية الفوتر */
+.footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 30px 0;
+}
+
+.footer h5 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.footer ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    color: #dddddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: #ffffff;
+}
+
+.footer .logo {
+    width: 50px;
+    height: auto;
+}
+
+.footer .hospital-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.footer .social-icons a {
+    color: #ffffff;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.footer .social-icons a:hover {
+    color: #1e90ff;
+}
+
+.footer .text-muted {
+    color: #dddddd !important;
+}
+
+/* الحقوق */
+.footer .text-center p {
+    color: #dddddd;
+    margin: 0;
+    font-size: 14px;
+}
+
+
+
+ /* نهاية الفوتر */
+ </style>
+
+</head>
+
+<body  data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
+    <!-- بداية الهيدر  -->
+   
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                
+               
+                <!-- زر القائمة للموبايل -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- الروابط على اليمين -->
+                <div class="collapse navbar-collapse justify-content-start" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">عن المجمع</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/services.html">الخدمات الطبية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">الأطباء</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">حجز موعد</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">اتصل بنا</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">الأسئلة الشائعة</a>
+                        </li>
+                    </ul>
+                </div>
+                 <!-- الشعار على اليسار -->
+                 <a class="navbar-brand" href="#">
+                    <img src="/Opera Sn1111111_logo.com.png" alt="شعار المستشفى" width="200" height="60">
+                </a>
+
+            </div>
+        </nav>
+    </header>
+
+<!-- نهاية الهيدر  -->
+
+
+
+
+
+  <!-- شريط إخباري -->
+  <div class="news-bar">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 d-flex align-items-center">
+          <h5 class="me-3">أحدث الأخبار:</h5>
+          <div class="news-ticker">
+            <div>العنوان الأول للخبر هنا</div>
+            <div>العنوان الثاني للخبر هنا</div>
+            <div>العنوان الثالث للخبر هنا</div>
+            <div>العنوان الرابع للخبر هنا</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- نهاية الشريط الاخبار  -->
+
+
+<!-- كود الفيديو -->
+<div class="container-fluid p-0">
+    <!-- فيديو بعرض كامل للصفحة -->
+    <video autoplay muted loop class="w-100">
+        <source src="/فيديو/أفضل مستشفى في الولايات المتحدة - مايو كلينك.mp4" type="video/mp4">
+        المتصفح الخاص بك لا يدعم تشغيل الفيديو.
+    </video>
+    <!-- المحتوى النصي والزر -->
+    <div class="content-overlay" >
+        <div class="container text-right">
+            <h1 class="display-4 text-white">احجز موعدك الآن</h1>
+            <p class="lead text-white">نحن هنا لخدمتك ولتقديم أفضل الرعاية الطبية.</p>
+            <a href="#" class="btn btn-primary btn-lg">احجز موعد طبياً</a>
+        </div>
+    </div>
+</div>
+
+<!-- نهايو كود الفيديو  -->
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br><br>
+
+<!-- بداية اكود main  -->
+<!-- اول شرح  -->
+<main class="d-flex align-items-center justify-content-between container my-5" >
+    <!-- المحتوى على اليمين -->
+    <div class="text-content text-end">
+        <h1 class="display-4">  نقدم للمرضى الدوليين أفضل رعاية طبية على مستوى العالم</h1>
+        <p class="lead"> نحرص على تسهيل إجراءات الحصول على العلاج في مايو كلينك للمرضى من جميع أنحاء العالم. </p>
+        
+        <a href="#" class="btn btn-primary btn-lg">إقرأ المزيد</a>
+    </div>
+
+     <!-- الصورة على اليسار -->
+     <div class="image-container">
+        <img src="/صور اطباء/Opera Snapshot_2024-10-07_234115_www.mayoclinic.org.png" alt="صورة طويلة" class="img-fluid">
+    </div>
+</main>
+
+<!-- نهاية الاول  -->
+
+<br>
+<br>
+<div class="colored-line"></div>
+
+<br>
+<br>
+
+<!-- ثاني شرح  -->
+
+<main class="d-flex align-items-center justify-content-between container my-5">
+    <!-- الصورة على اليمين -->
+    <div class="image-container">
+        <img src="/صور اطباء/Opera Snapshot_2024-10-07_233933_www.mayoclinic.org.png" alt="صورة طويلة" class="img-fluid">
+    </div>
+
+    <!-- المحتوى على اليسار -->
+    <div class="text-content text-end" style="margin-right: 60px;">
+        <h1 class="display-4">الشفاء يبدأ هنا</h1>
+        <p class="lead">الإجابات الصحيحة في المرة الأولى يعتمد العلاج الفعال على الحصول على التشخيص الصحيح. يقوم خبراؤنا بتشخيص ومعالجة أصعب التحديات الطبية.</p>
+
+        <h2 class="display-4">الأعلى تصنيفًا في الولايات المتحدة</h2>
+        <p class="lead">حصلت Mayo Clinic على التصنيف رقم 1 أكثر من أي مستشفى آخر في البلاد وفقًا لتقرير U.S. News & World Report.</p>
+
+        <a href="#" class="btn btn-primary btn-lg">إقرأ المزيد</a>
+    </div>
+</main>
+
+
+
+<!--نهاية ثاني شرح  -->
+
+<!-- الفروع  -->
+<div class="container my-5">
+    <!-- العنوان الرئيسي -->
+    <div class="text-center mb-5">
+        <h1 class="display-4">فروعنا</h1>
+        <p class="lead">اكتشف فروعنا في أنحاء مختلفة لتقديم أفضل الخدمات.</p>
+    </div>
+
+    <!-- القالبين بجانب بعض -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card h-100">
+                <img src="/فروعنا/Arizona.avif" class="card-img-top" alt="صورة">
+                <div class="card-body">
+                    <h5 class="card-title">الفرع طرابلس</h5>
+                    <p class="card-text">وصف قصير عن الفرع الأول.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card h-100">
+                <img src="/فروعنا/Flor3333333333.avif" class="card-img-top" alt="صورة">
+                <div class="card-body">
+                    <h5 class="card-title">الفرع بنغازي</h5>
+                    <p class="card-text">وصف قصير عن الفرع الثاني.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- أربعة قوالب تحت -->
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card h-100">
+                <img src="/فروعنا/Florida2222222.avif" class="card-img-top" alt="صورة">
+                <div class="card-body">
+                    <h5 class="card-title">الفرع غريان</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100">
+                <img src="/فروعنا/Minnesota.avif" class="card-img-top" alt="صورة">
+                <div class="card-body">
+                    <h5 class="card-title">الفرع مصراته</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100">
+                <img src="/فروعنا/UK.avif" class="card-img-top" alt="صورة">
+                <div class="card-body">
+                    <h5 class="card-title">الفرع سبها</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100">
+                <img src="/فروعنا/Florida2222222.avif" class="card-img-top" alt="صورة">
+                <div class="card-body">
+                    <h5 class="card-title">الفرع السادس</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- نهاية الفروع -->
+
+
+
+
+
+<!-- بداية الفوتر  -->
+
+<footer class="footer mt-5 pt-5">
+    <div class="container">
+        <div class="row">
+            <!-- قسم الشعار واسم المستشفى -->
+            <div class="col-md-4 mb-4">
+                <div class="d-flex align-items-center">
+                    <img src="/‏‏لقطة الشاشة (138).png" alt="مستشفى" class="logo img-fluid me-3" style="width: 50px; border-radius: 10px; margin-left: 20px;">
+                    <h3 class="hospital-name"> مجموعة شهد الطبية </h3>
+                </div>
+                <p class="text-muted mt-3">نحن هنا لضمان تقديم أفضل رعاية صحية ممكنة.</p>
+            </div>
+
+            <!-- روابط سريعة -->
+            <div class="col-md-4 mb-4">
+                <h5>روابط مهمة</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">من نحن</a></li>
+                    <li><a href="#">خدماتنا</a></li>
+                    <li><a href="#">الأطباء</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                </ul>
+            </div>
+
+            <!-- معلومات الاتصال -->
+            <div class="col-md-4 mb-4">
+                <h5>تواصل معنا</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-map-marker-alt"></i> العنوان: 123 شارع المستشفى، المدينة</li>
+                    <li><i class="fas fa-phone-alt"></i> الهاتف: 0123456789</li>
+                    <li><i class="fas fa-envelope"></i> البريد الإلكتروني: info@hospital.com</li>
+                </ul>
+                <!-- روابط التواصل الاجتماعي -->
+                <div class="social-icons mt-3">
+                    <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- الحقوق -->
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <p class="text-muted">&copy; 2024 مستشفى الشفاء. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- نهاية الفوتر  -->
+
+
+
+
+<!-- نهاية اكواد main -->
+
+    <!-- استيراد Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+
+</body>
+</html>

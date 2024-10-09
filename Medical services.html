@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical services</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+     <!-- استيراد Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+     <!-- استيراد ملف CSS الخاص -->
+     <link rel="stylesheet" href="style.css">
+
+     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+
+    <style>
+        
+ /* تحسين مظهر الهيدر */
+
+   
+ .navbar {
+    padding: 15px 0;
+    background-color: #8b7aaf; /* لون أزرق داكن وجميل */
+}
+
+.navbar-brand img {
+    width: 200px; /* حجم الشعار */
+    height: 60px;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1); /* تكبير الشعار عند التمرير */
+}
+
+/* تنسيق الروابط لتظهر أفقية مع مسافات ثابتة */
+.navbar-nav {
+    display: flex;
+    gap: 20px; /* التباعد بين الروابط */
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #0056b3; /* تغيير الخلفية عند التمرير */
+    color: #fff; /* ثبات اللون الأبيض للنص */
+}
+
+.navbar-toggler {
+    border-color: #fff; /* لون زر القائمة على الموبايل */
+    
+}
+
+.container {
+    max-width: 1300px; /* التحكم في عرض المحتوى داخل الهيدر */
+    
+}
+
+/* تحسين عرض الروابط في شاشات أصغر */
+@media (max-width: 992px) {
+    .navbar-nav {
+        flex-direction: column; /* الروابط تظهر عمودية على الشاشات الصغيرة */
+        align-items: flex-start;
+        gap: 10px; /* تقليل التباعد بين الروابط في الشاشات الصغيرة */
+    }
+}
+
+/* نهاية كود الهيدر  */
+
+/* باية البحث  */
+.doctor-search-section {
+    position: relative;
+    overflow: hidden; /* يمنع ظهور المحتوى الزائد */
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* يحافظ على نسبة العرض إلى الارتفاع */
+    filter: blur(5px); /* تأثير الضبابية */
+    z-index: -1; /* يضع الصورة في الخلف */
+}
+
+.search-content {
+    position: relative;
+    z-index: 1; /* يضمن أن المحتوى يظهر فوق الصورة */
+    background-color: rgba(255, 255, 255, 0.8); /* خلفية بيضاء مع شفافية خفيفة */
+    border-radius: 10px; /* زوايا دائرية */
+    padding: 2rem; /* مسافة داخلية */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+}
+
+.search-text {
+    font-size: 1.5rem; /* حجم النص */
+    color: #333; /* لون النص */
+}
+
+.search-icon {
+    font-size: 1.5rem; /* حجم الأيقونة */
+    color: #007bff; /* لون الأيقونة */
+}
+
+.search-input {
+    width: 300px; /* عرض شريط البحث */
+    padding: 10px; /* مسافة داخلية */
+    border-radius: 5px; /* زوايا دائرية */
+    border: 1px solid #ced4da; /* حدود خفيفة */
+}
+
+.search-btn {
+    padding: 10px 20px; /* مسافة داخلية */
+    border-radius: 5px; /* زوايا دائرية */
+    transition: background-color 0.3s; /* تأثير تدرج اللون عند التحويم */
+}
+
+.search-btn:hover {
+    background-color: #0056b3; /* لون الزر عند التحويم */
+}
+
+
+/* نهاية البحث */
+
+
+/* نتائج البحث */
+.search-results-section {
+    background-color: #f8f9fa; /* خلفية خفيفة */
+    padding: 40px 0; /* حشوة في الأعلى والأسفل */
+}
+
+.card {
+    border: none; /* إزالة الحدود */
+    border-radius: 10px; /* زوايا دائرية */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+    transition: transform 0.3s; /* تأثير تحريك */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* تحريك القالب عند التحويم */
+}
+
+.card-img-top {
+    border-top-left-radius: 10px; /* زوايا دائرية للصورة */
+    border-top-right-radius: 10px; /* زوايا دائرية للصورة */
+}
+
+.card-title {
+    font-size: 1.5rem; /* حجم عنوان الدكتور */
+    color: #333; /* لون العنوان */
+}
+
+.card-text {
+    font-size: 1rem; /* حجم نص التخصص وساعات العمل */
+    color: #555; /* لون النص */
+}
+
+.btn-primary {
+    background-color: #007bff; /* لون الزر */
+    border: none; /* إزالة الحدود */
+    border-radius: 5px; /* زوايا دائرية للزر */
+    padding: 10px 20px; /* حشوة داخلية للزر */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* لون الزر عند التحويم */
+}
+
+
+/* نهاية نتائج البحث */
+
+
+
+
+/* بداية الفوتر */
+ .footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 30px 0;
+}
+
+.footer h5 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.footer ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    color: #dddddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: #ffffff;
+}
+
+.footer .logo {
+    width: 50px;
+    height: auto;
+}
+
+.footer .hospital-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.footer .social-icons a {
+    color: #ffffff;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.footer .social-icons a:hover {
+    color: #1e90ff;
+}
+
+.footer .text-muted {
+    color: #dddddd !important;
+}
+
+/* الحقوق */
+.footer .text-center p {
+    color: #dddddd;
+    margin: 0;
+    font-size: 14px;
+}
+
+
+
+ /* نهاية الفوتر */
+
+    </style>
+
+</head>
+<body data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
+    
+      <!-- بداية الهيدر  -->
+   
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                
+               
+                <!-- زر القائمة للموبايل -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- الروابط على اليمين -->
+                <div class="collapse navbar-collapse justify-content-start" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/master_page.html">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">عن المجمع</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/services.html">الخدمات الطبية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Medical services.html">الأطباء</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">حجز موعد</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">اتصل بنا</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">الأسئلة الشائعة</a>
+                        </li>
+                    </ul>
+                </div>
+                 <!-- الشعار على اليسار -->
+                 <a class="navbar-brand" href="#">
+                    <img src="/Opera Sn1111111_logo.com.png" alt="شعار المستشفى" width="200" height="60">
+                </a>
+
+            </div>
+        </nav>
+    </header>
+
+<!-- نهاية الهيدر  -->
+
+
+<!-- الصوره و البحث  -->
+<section class="doctor-search-section text-center py-5">
+    <div class="container">
+        <h1 class="display-4 mb-4">الأطباء والفريق الطبي</h1>
+        <div class="search-container position-relative" style="height: 100vh; width: 100%;">
+            <!-- خلفية الصورة داخل صفحة HTML -->
+            <img src="/صور اطباء/12 Best Hospital and Healthcare Websites.jpg" alt="صورة خلفية" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(5px); z-index: -1;">
+
+            <!-- محتوى البحث -->
+            <div class="search-content p-5 position-relative">
+                <!-- أيقونة البحث والنص -->
+                <div class="search-text d-flex justify-content-center align-items-center mb-3">
+                    <i class="fas fa-search search-icon me-2"></i>
+                    <span class="lead">بحث عن الدكتور</span>
+                </div>
+
+                <!-- شريط البحث -->
+                <form class="d-flex justify-content-center">
+                    <input type="text" class="form-control search-input me-2" placeholder="أدخل اسم الدكتور" aria-label="Doctor's Name">
+                    <button class="btn btn-primary search-btn" type="submit">بحث</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- نهاية البحث  -->
+
+<!-- نتائج البحق  -->
+<section class="search-results-section py-5">
+    <div class="container">
+        <h1 class="text-center mb-4">نتائج البحث عن الدكتور</h1>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="/صور اطباء/Opera22222222.com" class="card-img-top" alt="صورة الدكتور">
+                    <div class="card-body">
+                        <h5 class="card-title">د. محمد علي</h5>
+                        <p class="card-text">تخصص: طب الأسرة</p>
+                        <p class="card-text">ساعات العمل: 9:00 ص - 5:00 م</p>
+                        <p class="card-text">الفرع: المستشفى المركزي</p>
+                        <p class="card-text">أيام العمل: الأحد - الخميس</p>
+                        <a href="#" class="btn btn-primary">احجز موعد</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="/صور اطباء/sfsef 111111.png" class="card-img-top" alt="صورة الدكتور">
+                    <div class="card-body">
+                        <h5 class="card-title">د. سارة أحمد</h5>
+                        <p class="card-text">تخصص: الأمراض الجلدية</p>
+                        <p class="card-text">ساعات العمل: 10:00 ص - 6:00 م</p>
+                        <p class="card-text">الفرع: عيادة خاصة</p>
+                        <p class="card-text">أيام العمل: الإثنين - الجمعة</p>
+                        <a href="#" class="btn btn-primary">احجز موعد</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="/صور اطباء/Opera 44444.png" class="card-img-top" alt="صورة الدكتور">
+                    <div class="card-body">
+                        <h5 class="card-title">د. أحمد عادل</h5>
+                        <p class="card-text">تخصص: الجراحة العامة</p>
+                        <p class="card-text">ساعات العمل: 11:00 ص - 7:00 م</p>
+                        <p class="card-text">الفرع: مستشفى السلام</p>
+                        <p class="card-text">أيام العمل: الثلاثاء - السبت</p>
+                        <a href="#" class="btn btn-primary">احجز موعد</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- نهاية نتائج البحث  -->
+
+
+<!-- بداية الفوتر  -->
+
+<footer class="footer mt-5 pt-5">
+    <div class="container">
+        <div class="row">
+            <!-- قسم الشعار واسم المستشفى -->
+            <div class="col-md-4 mb-4">
+                <div class="d-flex align-items-center">
+                    <img src="/‏‏لقطة الشاشة (138).png" alt="مستشفى" class="logo img-fluid me-3" style="width: 50px; border-radius: 10px; margin-left: 20px;">
+                    <h3 class="hospital-name"> مجموعة شهد الطبية </h3>
+                </div>
+                <p class="text-muted mt-3">نحن هنا لضمان تقديم أفضل رعاية صحية ممكنة.</p>
+            </div>
+
+            <!-- روابط سريعة -->
+            <div class="col-md-4 mb-4">
+                <h5>روابط مهمة</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">من نحن</a></li>
+                    <li><a href="#">خدماتنا</a></li>
+                    <li><a href="#">الأطباء</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                </ul>
+            </div>
+
+            <!-- معلومات الاتصال -->
+            <div class="col-md-4 mb-4">
+                <h5>تواصل معنا</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-map-marker-alt"></i> العنوان: 123 شارع المستشفى، المدينة</li>
+                    <li><i class="fas fa-phone-alt"></i> الهاتف: 0123456789</li>
+                    <li><i class="fas fa-envelope"></i> البريد الإلكتروني: info@hospital.com</li>
+                </ul>
+                <!-- روابط التواصل الاجتماعي -->
+                <div class="social-icons mt-3">
+                    <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- الحقوق -->
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <p class="text-muted">&copy; 2024 مستشفى الشفاء. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- نهاية الفوتر  -->
+
+
+
+
+
+  <!-- استيراد Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+
+</body>
+</html>
